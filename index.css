@@ -1,0 +1,79 @@
+:root {
+  background: #333333;
+  --animationBottom: ;
+  --animationTop: ;
+}
+
+#current {
+  fill: #ffff00;
+}
+
+#currentBottomGroup g {
+  /* transform: translate(calc(50% + (var(--order) - 1) * 10%), 75%); */
+  transition: all 1s ease;
+  animation-timing-function: linear;
+  animation-name: var(--animationBottom);
+  /* animation-duration: calc(var(--order) * 1s); */
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: 1;
+  animation-direction: alternate; */
+  animation-delay: calc((var(--order) - 1) * 0.5s);
+}
+
+#currentTopGroup g {
+  /* transform: translate(calc(50% + (var(--order) - 1) * 10%), 75%); */
+  transition: all 1s ease;
+  animation-timing-function: linear;
+  animation-name: var(--animationTop);
+  /* animation-duration: calc(var(--order) * 1s); */
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: 1;
+  animation-direction: alternate; */
+  /* animation-delay: calc(var(--order) * 0.5s); */
+  /* animation-delay: 1s; */
+}
+
+/* #bulb {
+  opacity: 0;
+} */
+
+/* #long1,
+#long2 {
+  opacity: 0;
+} */
+
+#battery {
+  opacity: 0;
+}
+
+#short1,
+#short2 {
+  opacity: 0;
+}
+
+#battery:hover,
+#bulb:hover {
+  opacity: .7;
+}
+
+@keyframes currentFlowBottom {
+  33% {
+    transform: matrix(0.16536458,0,0,0.16536458,34.75,34);
+  }
+
+  67% {
+    transform: matrix(0.16536458,0,0,0.16536458,34.75,-45);
+  }
+
+  100% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(124 - (var(--order) - 1) * 16),-45);
+  }
+}
+
+@keyframes currentFlowTop {
+  100% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 16),34.3);
+  }
+}
