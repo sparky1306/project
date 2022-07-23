@@ -1,11 +1,21 @@
 :root {
   background: #333333;
-  --animationBottom: ;
-  --animationTop: ;
+  --animationBottom: none;
+  --animationTop: none;
+  --animationLight: none;
+  --topDelay: 0s;
+  --lightDelay: 0s;
 }
 
 #current {
   fill: #ffff00;
+}
+
+#filament{
+  fill: #999999;
+  animation-name: var(--animationLight); 
+  animation-delay: var(--lightDelay);
+  animation-duration: 2s;
 }
 
 #currentBottomGroup g {
@@ -32,33 +42,33 @@
   /* animation-iteration-count: 1;
   animation-direction: alternate; */
   /* animation-delay: calc(var(--order) * 0.5s); */
-  /* animation-delay: 1s; */
+  animation-delay: var(--topDelay);
 }
 
-/* #bulb {
-  opacity: 0;
-} */
+#discharge {
+  display: none;
+}
 
 /* #long1,
 #long2 {
   opacity: 0;
 } */
 
-#battery {
-  opacity: 0;
-}
+/* #battery {
+  display: none;
+} */
 
-#short1,
+/* #short1,
 #short2 {
-  opacity: 0;
-}
+  opacity: 1;
+} */
 
 #battery:hover,
 #bulb:hover {
   opacity: .7;
 }
 
-@keyframes currentFlowBottom {
+@keyframes chargeFlowBottom {
   33% {
     transform: matrix(0.16536458,0,0,0.16536458,34.75,34);
   }
@@ -72,8 +82,37 @@
   }
 }
 
-@keyframes currentFlowTop {
+@keyframes chargeFlowTop {
   100% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 16),34.3);
+  }
+}
+
+@keyframes dischargeFlowBottom {
+  33% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(34.75 + (var(--order) - 1) * 24),34);
+  }
+
+  67% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(34.75 + (var(--order) - 1) * 24),114);
+  }
+
+  100% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 16),114);
+  }
+}
+
+@keyframes dischargeFlowTop {
+  100% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 64),34.3);
+  }
+}
+
+@keyframes lightBulb {
+  0% {
+    fill: #ffff00;
+  }
+  100% {
+    fill: #ffff00;
   }
 }
