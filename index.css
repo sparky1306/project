@@ -1,47 +1,112 @@
 :root {
-  background: #333333;
+  background: #444;
   --animationBottom: none;
   --animationTop: none;
   --animationLight: none;
   --topDelay: 0s;
   --lightDelay: 0s;
+  --white: #fff;
+  --blue: #0af;
 }
 
-#current {
-  fill: #ffff00;
+body {
+  left: 8px;
+  right: 8px;
+  font-family: Arial;
+}
+
+.title {
+  font-size: 4em;
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+}
+
+.nav-bar {
+  font-size: 2em;
+  border-radius: 4px;
+  border: 2px solid var(--white);
+}
+
+.nav-list {
+  background: var(--blue);
+  display: flex;
+  list-style: none;
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.nav-button {
+  background: var(--blue);
+}
+
+.nav-button:hover {
+  background: #058;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.mainframe {
+  height: 77vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation {
+  max-width: 100%;
+  max-height: 100%;
+  height: 80rem;
+  width: 80rem;
+}
+
+.footer {
+  padding: 10px;
+  color: var(--white);
+  background: var(--blue);
+  text-align: center;
+  position:fixed;
+  bottom: 8px;
+  right: 8px;
+  left: 8px;
+}
+
+
+/* Animation Stuffs */
+
+.current {
+  fill: #ff0;
 }
 
 #filament{
-  fill: #999999;
+  fill: #999;
   animation-name: var(--animationLight); 
   animation-delay: var(--lightDelay);
   animation-duration: 2s;
 }
 
-#currentBottomGroup g {
-  /* transform: translate(calc(50% + (var(--order) - 1) * 10%), 75%); */
+.currentBottomGroup g {
   transition: all 1s ease;
   animation-timing-function: linear;
   animation-name: var(--animationBottom);
-  /* animation-duration: calc(var(--order) * 1s); */
   animation-duration: 4s;
   animation-fill-mode: forwards;
-  /* animation-iteration-count: 1;
-  animation-direction: alternate; */
   animation-delay: calc((var(--order) - 1) * 0.5s);
 }
 
-#currentTopGroup g {
-  /* transform: translate(calc(50% + (var(--order) - 1) * 10%), 75%); */
+.currentTopGroup g {
   transition: all 1s ease;
   animation-timing-function: linear;
   animation-name: var(--animationTop);
-  /* animation-duration: calc(var(--order) * 1s); */
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  /* animation-iteration-count: 1;
-  animation-direction: alternate; */
-  /* animation-delay: calc(var(--order) * 0.5s); */
   animation-delay: var(--topDelay);
 }
 
@@ -49,22 +114,7 @@
   display: none;
 }
 
-/* #long1,
-#long2 {
-  opacity: 0;
-} */
-
-/* #battery {
-  display: none;
-} */
-
-/* #short1,
-#short2 {
-  opacity: 1;
-} */
-
-#battery:hover,
-#bulb:hover {
+.hover:hover {
   opacity: .7;
 }
 
@@ -72,11 +122,9 @@
   33% {
     transform: matrix(0.16536458,0,0,0.16536458,34.75,34);
   }
-
   67% {
     transform: matrix(0.16536458,0,0,0.16536458,34.75,-45);
   }
-
   100% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(124 - (var(--order) - 1) * 16),-45);
   }
@@ -92,11 +140,9 @@
   33% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(34.75 + (var(--order) - 1) * 24),34);
   }
-
   67% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(34.75 + (var(--order) - 1) * 24),114);
   }
-
   100% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 16),114);
   }
@@ -110,9 +156,9 @@
 
 @keyframes lightBulb {
   0% {
-    fill: #ffff00;
+    fill: #ffb;
   }
   100% {
-    fill: #ffff00;
+    fill: #ffb;
   }
 }
