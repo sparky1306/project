@@ -1,8 +1,10 @@
 let statusVar = 'charge';
+let battery = document.getElementById('battery');
+let bulb = document.getElementById('bulb');
 let charge = document.getElementById('charge');
 let discharge = document.getElementById('discharge');
 
-charge.onclick = function() {
+battery.onclick = function() {
   if (statusVar === 'charge') {
     document.documentElement.style.cssText = `
       --animationBottom: chargeFlowBottom;
@@ -10,6 +12,9 @@ charge.onclick = function() {
       --delay: 0s;
       --lightDelay: 0s;
       `;
+    chargeText.style.display = 'none';
+    chargingText.style.display = 'flex';
+    wires1.style.display = 'flex';
     statusVar = 'charged';
   }
   else if (statusVar === 'charged'){
@@ -18,12 +23,15 @@ charge.onclick = function() {
       --animationTop: none;
       `;
     charge.style.display = 'none';
-    discharge.style.display = 'block';
+    discharge.style.display = 'flex';
+    wires2.style.display = 'none';
+    chargingText.style.display = 'none';
+    dischargeText.style.display = 'flex';
     statusVar = 'discharge';
   }
 }
 
-discharge.onclick = function() {
+bulb.onclick = function() {
     if (statusVar === 'discharge') {
     document.documentElement.style.cssText = `
       --animationBottom: dischargeFlowBottom;
@@ -32,6 +40,9 @@ discharge.onclick = function() {
       --topDelay: 1s;
       --lightDelay: 1.5s;
       `;
+    dischargeText.style.display = 'none';
+    dischargingText.style.display = 'flex';
+    wires2.style.display = 'flex';
     statusVar = 'discharged';
   }
   else if (statusVar === 'discharged') {
@@ -40,8 +51,11 @@ discharge.onclick = function() {
       --animationTop: none;
       --animationLight: none;
       `;
-    charge.style.display = 'block';
+    charge.style.display = 'flex';
     discharge.style.display = 'none';
+    wires1.style.display = 'none';
+    dischargingText.style.display = 'none';
+    chargeText.style.display = 'flex';
     statusVar = 'charge'
   }
 }

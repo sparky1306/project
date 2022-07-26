@@ -15,9 +15,27 @@
       <li class="nav-button"><a href="">Quiz</a></li>
     </ul>
   </nav>
-  <div class="mainframe">
+  <div class="content">
+    <div id="chargeText" class="textParagraph">
+      <p>At rest, the positive charge is evenly distributed between the top and bottom plates of the capacitor.</p>
+      <p>Click the battery to connect it to the capacitor...</p>
+    </div>
+    <div id="chargingText" class="textParagraph">
+      <p>When the battery is connected, it charges the capacitor by forcing a positive charge to collect on the top plate of the capacitor.</p>
+      <p>Click the battery to remove it...</p>
+    </div>
+    <div id="dischargeText" class="textParagraph">
+      <p>When the battery is removed, the positve charge is "stuck" on the top plate.</p>
+      <p>Click the bulb to connect it to the capacitor...</p>
+    </div>
+    <div id="dischargingText" class="textParagraph">
+      <p>When the light bulb is connected, the positive charge distributes itself evenly between the two plates, with some of the charge passing through the light bulb to the bottom plate, lighting the light bulb.</p>
+      <p>Click the bulb to restart...</p>
+    </div>
+  </div>
+  <div>
     <svg
-      class="animation"
+      class="content"
       viewBox="0 0 169.33334 100.54169"
       version="1.1"
       id="charge"
@@ -45,7 +63,8 @@
           y="158.75"
           ry="2.0191073" />
         <g
-          id="wires">
+          id="wires1"
+          class="wires">
           <path
             id="short1"
             style="fill:#cccccc;stroke-width:0.280017"
@@ -151,9 +170,7 @@
       </g>
     </svg>
     <svg
-      class="animation"
-      width="169.33334mm"
-      height="100.54169mm"
+      class="content"
       viewBox="0 0 169.33334 100.54169"
       version="1.1"
       id="discharge"
@@ -181,7 +198,8 @@
           y="158.75"
           ry="2.0191073" />
         <g
-          id="wires">
+          id="wires2"
+          class="wires">
           <path
             id="rect354"
             style="fill:#cccccc;stroke-width:0.323336"
