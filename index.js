@@ -13,8 +13,8 @@ battery.onclick = function() {
       --lightDelay: 0s;
       `;
     chargeText.style.display = 'none';
-    chargingText.style.display = 'flex';
-    wires1.style.display = 'flex';
+    chargingText.style.display = 'grid';
+    wires1.style.display = 'grid';
     statusVar = 'charged';
   }
   else if (statusVar === 'charged'){
@@ -23,10 +23,10 @@ battery.onclick = function() {
       --animationTop: none;
       `;
     charge.style.display = 'none';
-    discharge.style.display = 'flex';
+    discharge.style.display = 'grid';
     wires2.style.display = 'none';
     chargingText.style.display = 'none';
-    dischargeText.style.display = 'flex';
+    dischargeText.style.display = 'grid';
     statusVar = 'discharge';
   }
 }
@@ -41,8 +41,8 @@ bulb.onclick = function() {
       --lightDelay: 1.5s;
       `;
     dischargeText.style.display = 'none';
-    dischargingText.style.display = 'flex';
-    wires2.style.display = 'flex';
+    dischargingText.style.display = 'grid';
+    wires2.style.display = 'grid';
     statusVar = 'discharged';
   }
   else if (statusVar === 'discharged') {
@@ -51,11 +51,11 @@ bulb.onclick = function() {
       --animationTop: none;
       --animationLight: none;
       `;
-    charge.style.display = 'flex';
+    charge.style.display = 'grid';
     discharge.style.display = 'none';
     wires1.style.display = 'none';
     dischargingText.style.display = 'none';
-    chargeText.style.display = 'flex';
+    chargeText.style.display = 'grid';
     statusVar = 'charge'
   }
 }
