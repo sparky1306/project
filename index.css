@@ -95,7 +95,32 @@ svg {
 }
 
 
-/* Animation Stuffs */
+/* Quiz Styling */
+.answers-list {
+  list-style: none;
+}
+
+#quizText {
+  display: flex;
+}
+
+.question {
+  text-align: left;
+}
+
+#submit {
+  font-size: 1em;
+  border-radius: 4px;
+  border: 2px solid var(--white);
+  padding: 10px;
+  color: var(--white);
+  background: #4A5;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/* Animation Styling */
 
 .current {
   fill: #ff0;
