@@ -61,35 +61,19 @@ a {
 #mainFrame {
   grid-row-start: 3;
   min-height: calc(100vh - 206px);
+  display: grid;
+  margin: auto;
 }
-
-/* #textDiv {
-  grid-row-start: 3;
-}
-
-#svgDiv {
-  grid-template-rows: 4;
-} */
 
 svg {
-  width: 90vw;
-  height: 30vh;
-}
-
-.content {
-  display: flex;
-  padding: 10px;
-  /* max-width: 80vw; */
-  /* max-height: 40vh; */
-  /* width: 80vw;
-  height: 80vh; */
-  margin: auto;
-  flex-direction: column;
+  width: 80vw;
+  height: 50vh;
+  padding: 5vw;
 }
 
 .textParagraph {
   color: var(--white);
-  font-size: 1.5em;
+  font-size: 1.25em;
   display: none;
   text-align: center;
   flex-direction: column;
@@ -108,10 +92,6 @@ svg {
   background: var(--blue);
   text-align: center;
   grid-row-start: 4;
-  /* position:sticky;
-  bottom: 8px;
-  right: 8px;
-  left: 8px; */
 }
 
 
@@ -160,6 +140,9 @@ svg {
 }
 
 @keyframes chargeFlowBottom {
+  0% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(93 + (var(--order) - 1) * 40),34.26924);
+  }
   33% {
     transform: matrix(0.16536458,0,0,0.16536458,34.75,34);
   }
@@ -172,12 +155,18 @@ svg {
 }
 
 @keyframes chargeFlowTop {
+  0% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(93 + (3 - var(--order)) * 40),34.26924);
+  }
   100% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 16),34.3);
   }
 }
 
 @keyframes dischargeFlowBottom {
+  0% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(93 + (var(--order) - 1) * 40),34.26924);
+  }
   33% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(34.75 + (var(--order) - 1) * 24),34);
   }
@@ -190,6 +179,9 @@ svg {
 }
 
 @keyframes dischargeFlowTop {
+  0% {
+    transform: matrix(0.16536458,0,0,0.16536458,calc(93 + (3 - var(--order)) * 40),34.26924);
+  }
   100% {
     transform: matrix(0.16536458,0,0,0.16536458,calc(172 - (var(--order) - 1) * 64),34.3);
   }
