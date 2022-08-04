@@ -1,3 +1,5 @@
+/* These functions progress the lesson through it's four stages */
+
 let statusVar = 'charge';
 let battery = document.getElementById('battery');
 let bulb = document.getElementById('bulb');
